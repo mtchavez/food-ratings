@@ -23,7 +23,7 @@ def format_to_csv(filepath):
     results = list()
     f = open(os.path.expanduser(filepath), 'r')
     out = open('finefoods.csv', 'wb')
-    writer = csv.writer(out, quotechar='"', quoting=csv.QUOTE_NONNUMERIC)
+    writer = csv.writer(out, delimiter="\t")
     for line in f.xreadlines():
         if line == '\n':
             results[3] = format_fraction(results[3])
